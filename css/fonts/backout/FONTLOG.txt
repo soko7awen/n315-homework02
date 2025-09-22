@@ -1,0 +1,39 @@
+FONTLOG for BackOut
+-------------------
+This file provides detailed information on the BackOut font software.
+This information should be distributed along with the BACKOUT fonts
+and any derivative works.
+
+
+Basic Font Information
+--------------------------
+BackOut is a humanistic incise typeface. It has a heavily modular aspect but optic corrections have been performed on closed letters, arrows and other glyphs. Please keep that in mind when designing new glyphs :)
+
+
+Information for Contributors
+------------------------------
+BackOut is released under the OFL 1.1 - http://scripts.sil.org/OFL
+For information on what you're allowed to change or modify, consult the
+OFL-1.1.txt and OFL-FAQ.txt files. The OFL-FAQ also gives a very general
+rationale and various recommendations regarding why you would want to
+contribute to the project or make your own version of the font.
+
+See the project website for the current trunk and the various branches:
+https://gitlab.com/velvetyne/backout
+
+ChangeLog
+----------
+
+
+Acknowledgements
+-------------------------
+
+N: Frank Adebiaye
+E: fadebiaye@gmail.com
+W: http://www.fadebiaye.com/
+D: Initiator
+
+N: Ariel Martín Pérez
+E: contact@arielgraphisme.com
+W: http://arielgraphisme.com/
+D: Contributor

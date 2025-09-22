@@ -1,15 +1,19 @@
-const homePage = `<h1>Home Page</h1><p>Welcome to the Home Page!`;
-const aboutPage = `<h1>About Page</h1><p>Welcome to the About Page!`;
-const productsPage = `<h1>Products Page</h1><p>Welcome to the Products Page!`;
-const contactUsPage = `<h1>Contact Us Page</h1><p>Welcome to the Contact Us Page!`;
-
-
-export function changePage(pageName) {
-    let navID = pageName + "Page";
-    $("#app").html(eval(navID));
+export async function changePage(pageName) {
+    try {
+        const response = await fetch(`pages/${pageName}.html`);
+        if (!response.ok) throw new Error('Page not found');
+        
+        const html = await response.text();
+        $("#app").html(html);
+    } catch (error) {
+        $("#app").html(`<p>Error loading page: ${error.message}</p>`);
+    }
 }
 
-export function loadData(fName, callback) {
-    let newName = fName + " Smith";
-    callback(newName);
+export async function loadName(caller, callback) {
+    let apiURL = "https://fantasyname.lukewh.com/?ancestry=e&family=t";
+    let response = await fetch(apiURL);
+    let newName = await response.text();
+
+    callback(caller, newName);
 }

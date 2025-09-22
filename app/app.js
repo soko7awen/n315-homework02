@@ -1,4 +1,4 @@
-import { changePage, loadData } from "../model/model.js";
+import { changePage, loadName } from "../model/model.js";
 
 function initListeners() {
     $("nav ul li a").on("click", (e) => {
@@ -8,17 +8,26 @@ function initListeners() {
 
     })
 
-    $("#loadDataBtn").on("click", (e) => {
+    $("#app").on("click", "#loadNameBtn", function (e) {
         e.preventDefault();
-        loadData("Haven", myReturnedData);
-    })
-}
+        loadName(this, printName);
+    });
+    }
 
-function myReturnedData(data) {
-    console.log("Data loaded:", data);
+function printName(caller, newName) {
+    if ($("#printedName")) {
+        $("#printedName").remove()
+    }
+    let space = document.createElement("span");
+    space.innerHTML = "&nbsp;&nbsp;";
+    caller.insertAdjacentElement("afterend", space);
+    let p = document.createElement("p");
+    p.id = "printedName";
+    p.innerHTML = newName;
+    space.insertAdjacentElement("afterend", p);
 }
 
 $(document).ready(() => {
-    //changePage("home");
+    changePage("home");
     initListeners();
 })
